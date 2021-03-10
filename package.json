@@ -24,7 +24,8 @@
   "homepage": "https://github.com/nguyenhieunghia2001/nodejs_blog#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "express-handlebars": "^5.2.1"
+    "express-handlebars": "^5.2.1",
+    "mongoose": "^5.11.19"
   },
   "devDependencies": {
     "node-sass": "^5.0.0",

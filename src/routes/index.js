@@ -1,10 +1,11 @@
-const homeRouter = require("./home");
+const homeRouter = require('./home');
 
 function route(app) {
-//   app.get("/home", (req, res) => {
+//   app.get('/', (req, res) => {
 //     res.render("home");
 //   });
-  app.use('/', homeRouter);
+    app.use('/home', homeRouter);
+   
 }
 
 module.exports = route;
