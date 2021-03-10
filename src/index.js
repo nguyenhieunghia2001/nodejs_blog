@@ -5,10 +5,10 @@ const app = express()
 const port = 8888
 const path = require('path');
 const route = require('./routes');
-const database = require('./config/database');
+const db = require('./config/database')
 
 //connect db
-database.connect();
+db.connect();
 
 
 app.use(express.static(path.join(__dirname, 'public')));
