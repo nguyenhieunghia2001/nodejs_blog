@@ -1,14 +1,13 @@
 const Cource = require("../models/Cource");
 
 class SiteController {
-  index(req, res) {
-    Cource.find({}, function (err, courses) {
-      if (!err) res.json(courses);
-      else res.status(400).json({ loi: "Sai!!" });
-    });
-    // res.json({
-    //     name: 'chào'
-    // })
+  index(req, res, next) {
+    Cource.find({})
+      .then(cource => {
+        cource = cource.map(cource => cource.toObject());
+        res.render('search', {cource})
+      })
+      .catch(next)
     // res.render('home');
   }
 }

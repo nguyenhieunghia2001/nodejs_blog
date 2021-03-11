@@ -20,7 +20,7 @@ app.use(express.json());
 
 app.engine('handlebars', handlebars());
 app.set('view engine', 'handlebars');
-app.set('views', path.join(__dirname, 'resource/views'));
+app.set('views', path.join(__dirname, 'resource', 'views'));
 
 
 
