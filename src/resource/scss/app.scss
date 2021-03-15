@@ -1,4 +1,98 @@
-h1{
-    font-size: 5rem;
-    color: red;
-}
+/* SGV */
+.svg-icon {
+    width: 1em;
+    height: 1em;
+    font-size: 25px;
+    padding-right: 5px;
+  }
+  
+  .svg-icon path,
+  .svg-icon polygon,
+  .svg-icon rect {
+    fill: black;
+  }
+  
+  .svg-icon circle {
+    stroke: #4691f6;
+    stroke-width: 1;
+  }
+  
+  /* //start */
+  .wellcome {
+    height: 700px;
+    margin-bottom: 100px;
+  }
+  
+  .spaned{
+      color: #f0f0f0;
+      padding: 0 5px;
+  }
+  
+  .navbar-auth{
+      list-style-type: none;
+      flex-direction: row;
+  }
+  
+  .btn-all {
+    background-color: #d15029;
+    border-radius: 30px;
+    color: white;
+    padding: 8px 20px 8px 20px;
+  }
+  
+  .col-4 {
+    min-width: 300px;
+  }
+  
+  /* khóa học nổi bật */
+  .courseGrid {
+    height: 400px;
+    width: 390px;
+    border-radius: 5px;
+    border: 0.1px solid #ebebeb;
+  }
+  
+  .course_img {
+    height: 215px;
+    background-image: url("https://img.youtube.com/vi/R6plN3FvzFY/sddefault.jpg");
+  }
+  .course_title,
+  .course_content {
+    padding: 5px 10px;
+  }
+  
+  .course_btn-join {
+    background-color: #d15029;
+    border-radius: 30px;
+    color: white;
+  }
+  
+  .watch_allCourses{
+      margin: 50px;
+  }
+  .btn_allCourses{
+      background-color: #d15029;
+      border-radius: 30px;
+      color: white;
+      font-weight: 300;
+      font-size: 20px;
+      padding-left: 25px;
+      padding-right: 25px;
+  }
+  
+  /* footer */
+  .footer{
+      background-color: black; 
+      color: #969696;
+      padding-bottom: 50px;
+      padding-top: 30px;
+  }
+  .footer_list{
+      list-style-type: none;
+  }
+  a{
+      text-decoration: none;
+      color: 
+      #969696
+      ;
+  }
