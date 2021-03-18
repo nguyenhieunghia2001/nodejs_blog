@@ -2,7 +2,7 @@ const Cource = require("../models/Cource");
 
 class CourseController{
     index(req, res, next){
-        Cource.findOne({course: req.params.slug})
+        Cource.findOne({slug: req.params.slug})
             .then(course =>{
                 res.render('courses/detail', {course})
             })

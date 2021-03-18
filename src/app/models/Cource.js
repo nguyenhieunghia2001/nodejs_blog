@@ -5,7 +5,7 @@ mongoose.plugin(slug);
 const Schema = mongoose.Schema;
 
 
-const Cource = new Schema({
+const Course = new Schema({
     name: {type: String, maxLength: 200},
     description: {type: String},
     slug: { type: String, slug: "name", unique: true }
@@ -13,4 +13,4 @@ const Cource = new Schema({
     timestamps: true.valueOf,
 });
 
-module.exports = mongoose.model('Cource', Cource);
+module.exports = mongoose.model('Course', Course);
