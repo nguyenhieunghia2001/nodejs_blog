@@ -8,16 +8,17 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <link rel="stylesheet" href="/css/app.css">
 </head>
 
 <body>
-    {{> header}}
-
-    {{{body}}}
-
-    {{> footer}}
+   
+            {{> header}}
+            {{{body}}}
+            {{> footer}}
+          
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
@@ -27,6 +28,32 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+        const old_password = document.getElementById('old_password');
+        const new_password = document.getElementById('new_password');
+        const btn_change = document.getElementById('btnchange');
+        const comfirm = document.getElementById('comfirm');
+        const submitchange = document.getElementById('submitchange');
+
+        btn_change.addEventListener('click', (e) => {
+            old_password.removeAttribute('hidden');
+            new_password.value = "";
+            new_password.removeAttribute('readonly');
+            comfirm.removeAttribute('hidden');
+            submitchange.removeAttribute('hidden');
+        });
+    </script>
+    <script src="/js/test.js"></script>
+    <script src="/js/admin.js"></script>
 </body>
 
 </html>

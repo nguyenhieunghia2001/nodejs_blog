@@ -15,19 +15,22 @@
 <div class="introduce">
     <div class="container">
         <div class="row">
-            <div class="col-4 d-flex flex-column align-items-center">
+            <div class="col-4 d-flex flex-column align-items-center" data-aos="fade-up"
+                data-aos-anchor-placement="center-bottom" data-aos-delay="210">
                 <div class="introduce_icon">
                     <img src="/img/icon1.png" alt="lỗi hiển thị" width="76px" height="76px">
                 </div>
                 <p class="introduce_content">Trên 31.827 học viên</p>
             </div>
-            <div class="col-4  d-flex flex-column align-items-center">
+            <div class="col-4  d-flex flex-column align-items-center" data-aos="fade-up"
+                data-aos-anchor-placement="center-bottom" data-aos-delay="180">
                 <div class="introduce_icon">
                     <img src="/img/icon2.png" alt="lỗi hiển thị" width="76px" height="76px">
                 </div>
                 <p class="introduce_content">9+ khóa học dành cho bạn</p>
             </div>
-            <div class="col-4  d-flex flex-column align-items-center">
+            <div class="col-4  d-flex flex-column align-items-center" data-aos="fade-up"
+                data-aos-anchor-placement="center-bottom" data-aos-delay="150">
                 <div class="introduce_icon">
                     <img src="/img/icon3.png" alt="lỗi hiển thị" width="76px" height="76px">
                 </div>
@@ -47,11 +50,12 @@
             {{#each cource}}
             <div class="col-4">
                 <div class="courseGrid" style="margin: 20px 0;">
-                    <a href="/course/{{this.slug}}">
+                    <a href="/course/{{this.slug}}" >
                         <div class="course_img" style="background-image: url({{this.img}});">
                         </div>
                     </a>
-
+                    
+                    <div class="course__body" style="padding: 0 12px;">
                     <a href="/course/{{this.slug}}" class="move_detailcourse">
                         <div class="course_title" style="margin-top: 10px;">
                             <h6>{{this.name}}</h5>
@@ -73,6 +77,7 @@
                             <button class="btn course_btn-join">Miễn phí</button>
                         </div>
                     </div>
+                    </div>
                 </div>
             </div>
             {{/each}}
@@ -83,4 +88,3 @@
 <div class="watch_allCourses d-flex justify-content-center align-items-center">
     <button class="btn btn_allCourses">Tất cả khóa học</button>
 </div>
-

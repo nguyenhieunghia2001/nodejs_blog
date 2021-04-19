@@ -1,24 +1,45 @@
-<div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-between">
-            <a class="navbar-brand" href="./home" style="color: #d15029;">FullStack</a>
+<header class="header" style="position: sticky;">
+    <div class="container d-flex justify-content-between align-items-center" style="margin-bottom: 30px;">
+        <nav class="navbar navbar-expand-lg navbar-dark d-flex justify-content-between">
+            <a class="navbar-brand" href="/" style="color: #d15029;"><span
+                    style="font-weight: 700;">Full</span><span>Stack</span></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <div class="d-flex align-items-center">
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav nav-stype">
                         <li class="nav-item active">
-                            <a class="nav-link" href="./home">Khóa Học</a>
+                            <a class="nav-link" href="/">Khóa Học</a>
+                        </li>
+
+                        {{#if currentUser}}
+                        <li>
+                            <a class="nav-link" href="/auth/logout">Đăng xuất</a>
+                        </li>
+                        {{else}}
+                        <li>
+                            <a class="nav-link" href="/auth/login">Đăng nhập</a>
                         </li>
                         <li>
-                            <a class="nav-link" href="./home">Đăng nhập</a>
+                            <a class="nav-link" href="/auth/register">Đăng ký</a>
                         </li>
-                        <li>
-                            <a class="nav-link" href="./home"> Đăng ký </a>
-                        </li>
+                        {{/if}}
+
                     </ul>
                 </div>
             </div>
         </nav>
-</div>
+        <div class="user d-flex align-items-center">
+            {{#if currentUser}}
+            <div class="user__img"
+                style="background-image: url(../../../img/icon1.png); margin-right: 10px;"></div>
+            <a href="/user/{{currentUser._id}}" class="user__name" data-toggle="tooltip" data-placement="bottom"
+                title="Quản lý tài khoản">
+                {{userName}}
+            </a>
+            {{/if}}
+        </div>
+    </div>
+</header>

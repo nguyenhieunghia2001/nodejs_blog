@@ -1,0 +1,61 @@
+<div class="container d-flex justify-content-center">
+    <div class="sitting ">
+        <div class="sitting__header">
+            <h1>Tài Khoản</h1>
+        </div>
+        <div class="sitting__body">
+            <div class="info__login">
+                <span class="info__login-title">Thông tin đăng nhập</span>
+
+                <div class="info__login-grid">
+                    <p class="login__grid-title">Eamil</p>
+                    <!-- <span class="login__grid-content">********</span> -->
+                    <input type="email" class="form-control" id="email" name="email" value="Nghiadx2001@gmail.com"
+                        readonly>
+                </div>
+                <div class="info__login-grid">
+                    <form>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <p class="login__grid-title">Mật khẩu</p>
+                            <span class="Click_changePass" id="btnchange">Thay đổi</span>
+                        </div>
+                        <input type="password" class="form-control" id="old_password" name="old_password"
+                            placeholder="Mật khẩu cũ" hidden>
+
+                        <input type="password" class="form-control" id="new_password" name="new_password"
+                            value="nghiadx" placeholder="Mật khẩu mới" readonly>
+                        <input type="password" class="form-control" id="comfirm" name="comfirm"
+                            placeholder="Nhập lại mật khẩu" hidden>
+                        <div class="d-flex justify-content-end">
+                            <button type="submit" class="btn btn__primary-web" id="submitchange" hidden>Thay
+                                đổi</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="info__personal" style="margin-top: 100px;">
+                <span class="info__login-title">Thông tin cá nhân</span>
+
+                <div class="info__login-grid">
+                    <p class="login__grid-title">Tên học viên</p>
+                    <!-- <span class="login__grid-content">********</span> -->
+                    <input type="text" class="form-control" id="username" name="username" value="Nguyễn Hiếu Nghĩa">
+                </div>
+
+                <div class="info__login-grid">
+                    <p class="login__grid-title">Giới tính</p>
+                    <div class="radio-male d-flex ">
+                        <div class="custom-control custom-radio" style="margin-right: 30px;">
+                            <input type="radio" class="custom-control-input" id="male" name="gender" required>
+                            <label class="custom-control-label" for="customControlValidation2">Nam</label>
+                        </div>
+                        <div class="custom-control custom-radio mb-3">
+                            <input type="radio" class="custom-control-input" id="female" name="gender" required>
+                            <label class="custom-control-label" for="customControlValidation3">Nữ</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="formLogin d-flex justify-content-center align-items-center">
+    <div class="formAuth">
+        <h3 class="login__title">Đăng Ký Thành Viên</h3>
+        <form method="POST">
+            <div class="form-group">
+                {{!-- is-invalid --}}
+                <input type="email" class="form-control " id="email" name="email" placeholder="Nhập Email"
+                    required>
+                <div class="invalid-feedback">
+                    You must agree before submitting.
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="username" name="username" placeholder="Nhập tên học viên">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Nhập mật khẩu">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="comfirm" name="comfirm" placeholder="Nhập lại mật khẩu">
+            </div>
+            <div class="btn_submitauth d-flex flex-column">
+                <button type="submit" class="btn btn__primary-web">Đăng ký</button>
+                <span class=" d-flex justify-content-center" style="margin-top: 15px; color: white;">
+                        Đã có tài khoản?  
+                        <span><a href="login" >Đăng nhập</a></span>
+                    </span>
+            </div>
+            {{#if errRegister }}
+            <div class="alert alert-danger" role="alert" style="margin-top: 15px;">
+                {{errRegister}}
+            </div>
+            {{/if}}
+        </form>
+    </div>
+</div>

@@ -1,160 +1,413 @@
 /* SGV */
 .svg-icon {
-    width: 1em;
-    height: 1em;
-    font-size: 25px;
-    padding-right: 5px;
-  }
-  
-  .svg-icon path,
-  .svg-icon polygon,
-  .svg-icon rect {
-    fill: black;
-  }
-  
-  .svg-icon circle {
-    stroke: #4691f6;
-    stroke-width: 1;
-  }
-  
-  /* //start */
-  .wellcome {
-    height: 700px;
-    margin-bottom: 100px;
-  }
-  
-  .spaned{
-      color: #f0f0f0;
-      padding: 0 5px;
-  }
-  
-  .navbar-auth{
-      list-style-type: none;
-      flex-direction: row;
-  }
-  
-  .btn-all {
-    background-color: #d15029;
-    border-radius: 30px;
-    color: white;
-    padding: 8px 20px 8px 20px;
-  }
-  
-  .col-4 {
-    min-width: 300px;
-  }
-  
-  /* khóa học nổi bật */
-  .courseGrid {
-    height: 440px;
-    border-radius: 5px;
-    border: 0.1px solid #ebebeb;
-    padding: 0 12px;
-  }
-  
-  .course_img {
-    height: 215px;
-    // background-image: url("https://img.youtube.com/vi/R6plN3FvzFY/sddefault.jpg");
-  }
-  .course_title,
-  .course_content {
-    padding: 5px 10px;
-  }
-  
-.move_detailcourse{
+  width: 1em;
+  height: 1em;
+  font-size: 25px;
+  padding-right: 5px;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: black;
+}
+
+.svg-icon circle {
+  stroke: #4691f6;
+  stroke-width: 1;
+}
+
+/* //start */
+header {
+  background-color: black;
+}
+
+.user__name {
+  color: #d15029;
+  font-weight: 500;
+  font-size: 18px;
   text-decoration: none;
 }
-.move_detailcourse:hover{
+.user__name:hover{
   text-decoration: none;
   color: #d15029;
 }
 
-  .course_btn-join {
-    background-color: #d15029;
-    border-radius: 30px;
-    color: white;
-  }
-  
-  .watch_allCourses{
-      margin: 50px;
-  }
-  .btn_allCourses{
-      background-color: #d15029;
-      border-radius: 30px;
-      color: white;
-      font-weight: 300;
-      font-size: 20px;
-      padding-left: 25px;
-      padding-right: 25px;
-  }
-  
-  /* footer */
-  .footer{
-      background-color: black; 
-      color: #969696;
-      padding-bottom: 50px;
-      padding-top: 30px;
-  }
-  .footer_list{
-      list-style-type: none;
-  }
-  a{
-      text-decoration: none;
-      color: 
-      #969696
-      ;
-  }
+.nav-stype {
+  color: white;
+}
 
-  // chi tiết 
-  .course__description{
-    margin: 20px 0;
-  }
+.wellcome {
+  height: 700px;
+  margin-bottom: 100px;
+}
+
+.spaned {
+  color: #f0f0f0;
+  padding: 0 5px;
+}
+
+.navbar-auth {
+  list-style-type: none;
+  flex-direction: row;
+}
+
+.btn-all {
+  background-color: #d15029;
+  border-radius: 30px;
+  color: white;
+  padding: 8px 20px 8px 20px;
+}
+
+.col-4 {
+  min-width: 300px;
+}
+
+/* khóa học nổi bật */
+.courseGrid {
+  height: 440px;
+  border-radius: 10px;
+  border: 0.1px solid #ebebeb;
+}
+.courseGrid:hover{
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.course_img {
+  height: 190px;
+  // background-image: url("https://img.youtube.com/vi/R6plN3FvzFY/sddefault.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  border-radius: 10px;
+}
+.course_title,
+.course_content {
+  padding: 5px 10px;
+}
+
+.move_detailcourse {
+  text-decoration: none;
+}
+.move_detailcourse:hover {
+  text-decoration: none;
+  color: #d15029;
+}
+
+.course_btn-join {
+  background-color: #d15029;
+  border-radius: 30px;
+  color: white;
+}
+
+.watch_allCourses {
+  margin: 50px;
+}
+.btn_allCourses {
+  background-color: #d15029;
+  border-radius: 30px;
+  color: white;
+  font-weight: 300;
+  font-size: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+/* footer */
+.footer {
+  background-color: black;
+  color: #969696;
+  padding-bottom: 50px;
+  padding-top: 30px;
+  margin-top: 50px;
+}
+.footer_list {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: #969696;
+}
+
+// chi tiết
+.course__description {
+  margin: 20px 0;
+}
+
+.willstudy--list,
+.intro--list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.icon--check {
+  fill: black in !important;
+}
+/* footer */
+.footer {
+  background-color: black;
+  color: #969696;
+  padding-bottom: 50px;
+  padding-top: 30px;
+}
+.footer_list {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: #969696;
+}
+
+.willstudy__list-items {
+  display: inline-block;
+  margin: 15px 0 0 20px;
+}
+.requesr-content--items {
+  margin: 15px 0 0 20px;
+}
+
+.content__videos-list {
+  list-style-type: none;
+}
+// .content__videos-list li {
+// margin: 8px 0;
+// border: 0.2px solid #dadada;
+// padding: 5px 15px;
+// border-radius: 5px;
+// }
+
+// .content__videos-list li:hover {
+//   background-color: #ffe3c4;
+//   border: 0.2px solid transparent;
+// }
+
+.content__videos-list li a {
+  text-decoration: none;
+  color: black;
+}
+.content__videos-list li a:hover {
+  text-decoration: none;
+  color: #d15029;
+}
+
+.video__main {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 56.25%;
+}
+.main-videodetail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video__play {
+  padding: 8px 14px;
+  background-color: #fafafa;
+  margin: 2px 0;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.video__play:hover {
+  background-color: #e9e9e9;
+}
+.video__item--title {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.videos__item {
+  height: 570px;
+  overflow-y: scroll;
+}
+
+/* Login */
+
+.login__title {
+  margin: 10px 0 30px 0;
+  color: #d15029;
+  text-align: center;
+}
+
+.formLogin {
+  background: rgb(212, 105, 19);
+  background: linear-gradient(
+    0deg,
+    rgba(212, 105, 19, 1) 33%,
+    rgba(255, 178, 84, 0.9699230033810399) 100%
+  );
+  margin: 0;
+  height: 700px;
+}
+.formAuth {
+  width: 100%;
+  max-width: 370px;
+  background-color: #242835;
+  padding: 20px 20px 30px 20px;
+  border-radius: 10px;
+  box-shadow: -1px 0px 20px 3px #545454;
+}
+.form-control {
+  line-height: 2;
+  margin: 8px 0;
+}
+.form-control:focus {
+  box-shadow: none;
+}
+
+.btn_submitauth {
+  margin-top: 15px;
+}
+.btn__primary-web {
+  color: white;
+  background-color: #d15029;
+}
+
+//icon fb gg login and register view
+.socialNetWork{
+  margin-top: 20px;
+}
+.logo--social{
+  fill: #4691f6;
+  font-size: 50px;
+}
+
+/* account */
+.sitting {
+  width: 600px;
+}
+.sitting__header h1 {
+  line-height: 50px;
+  font-weight: 400;
+  font-size: 60px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.info__login-title {
+  margin-bottom: 5px;
+}
+.info__login-grid {
+  border-top: 0.5px solid #d15029;
+  border-bottom: 0.5px solid #d15029;
+  padding: 10px 0;
+}
+.login__grid-title {
+  font-size: 25px;
+  font-weight: 300;
+}
+
+.Click_changePass:hover {
+  color: #d15029;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+//header
+.user__img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+//admin
+.admin{
+  background-color: #ffede8;
+}
+
+.left {
+  margin: 18px 5px 8px 5px;
+  background-color: white;
+  height: 96vh;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+}
+.left__header{
+  font-weight: 400;
+}
+.left__header-title{
+  padding: 20px 0;
+  text-align: center;
+  color: #c9c9c9;
+}
+.left__nav{
+  padding: 0 35px;
+}
+
+.nav-admin{
+  padding: 10px 15px;
+  list-style-type: none;
+  margin: 10px 0;
+}
+.nav-admin:hover{
+  background-color: #edeaf1;
+  border-radius: 5px;
+}
+.nav__admin-active{
+  background: linear-gradient(60deg, #d1784f, #d1a68d);
+  border-radius: 5px;
+}
+
+.admin-link{
+  text-decoration: none;
+  margin: 0;
+  color: black;
+}
+.admin-link:hover{
+  color: black;
+}
+
+.admin-link p{
+  font-size: 20px;
+  margin: 0 0 0 20px;
   
-  .willstudy--list,
-  .intro--list{
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .icon--check{
-    fill: black in !important;
-  }
-  /* footer */
-  .footer{
-      background-color: black; 
-      color: #969696;
-      padding-bottom: 50px;
-      padding-top: 30px;
-  }
-  .footer_list{
-      list-style-type: none;
-  }
-  a{
-      text-decoration: none;
-      color: 
-      #969696
-      ;
-  }
-  
-  .willstudy__list-items{
-    display: inline-block;
-    margin: 15px 0 0 20px;
-  }
-  .requesr-content--items{
-    margin: 15px 0 0 20px;
-  }
-  
-  .content__videos-list{
-    list-style-type: none;
-  }
-  .content__videos-list li{
-    margin: 8px 0;
-    border: 0.2px solid #dadada ;
-    padding: 5px 15px; 
-    border-radius: 5px; 
-  }
-  
-  .content__videos-list li:hover{
-    background-color: #ffe3c4;
-    border: 0.2px solid transparent ;
-  }
+}
+
+.icon-home{
+  font-size: 40px;
+}
+
+/* //RIGHT */
+.right__header{
+  padding: 20px 40px;
+  margin: 20px 10px 20px 0;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+/* INPUT */
+.input__primary{
+  padding: 5px 15px;
+  border: 0.2px solid rgb(255, 202, 159);
+  border-radius: 10px;
+  font-weight: lighter;
+}
+.input__primary:focus{
+  outline: none;
+  border: 0.2px solid rgb(255, 202, 159);
+}
+.icon-header{
+  font-size: 30px;
+}
+
+.right__body{
+  background-color: white;
+  height: 565px;
+  border-radius: 10px;
+  margin-top: 35px;
+  margin-right: 10px;
+  overflow: auto;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+.table__course, .form__AddCourse{
+  padding: 40px;
+}

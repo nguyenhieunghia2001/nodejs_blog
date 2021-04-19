@@ -5,11 +5,10 @@ mongoose.plugin(slug);
 const Schema = mongoose.Schema;
 
 
-const DetailCourse = new Schema({
-    slug: { type: String, slug: "name", unique: true },
-    willstudy: {type: String},
-    status: {type: int},
-    
+const Detail_Courses = new Schema({
+    name_video: {type: String},
+    id_video: {type: String},
+    slug_course: {type: String},
 });
 
-module.exports = mongoose.model('DetailCourse', DetailCourse);
+module.exports = mongoose.model('Detail_Courses', Detail_Courses);

@@ -1,4 +1,5 @@
 const Cource = require("../models/Cource");
+const User = require("../models/user");
 
 class HomeController{
     // index(req, res){
