@@ -43,7 +43,7 @@ app.use(express.json());
 var hbs = handlebars.create({
   helpers: {
     if_equal: (a, b, opts) => a == b ? opts.fn(this)  : opts.inverse(this),
-
+    sum: (value) => value + 1,
   }
 });
 
@@ -51,6 +51,7 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'resource', 'views'));
 
+// console.log(path.join(__dirname, 'resource', 'views'));
 //passport
 passport.serializeUser(function(user, done) {
   done(null, user);

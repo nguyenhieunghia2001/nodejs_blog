@@ -7,7 +7,7 @@
                 </div>
                 <div class="left__body">
                     <ul class="left__nav">
-                        <li class="nav-admin ">
+                        <li class="nav-admin nav__admin-active">
                             <a href="/adminhome" class="nav__item-link admin-link d-flex align-items-center">
                                 <svg class="svg-icon icon-home" viewBox="0 0 20 20">
                                     <path
@@ -17,7 +17,7 @@
                                 <p>Trang chính</p>
                             </a>
                         </li>
-                        <li class="nav-admin nav__admin-active">
+                        <li class="nav-admin">
                             <a href="/admincourse" class="nav__item-link admin-link d-flex align-items-center">
                                 <svg class="svg-icon icon-home" viewBox="0 0 20 20">
                                     <path fill="none"
@@ -46,15 +46,15 @@
             </div>
         </div>
         <div class="col-xl-9">
-            <div class="right">
+            <div class="right ">
                 <div class="right__header d-flex justify-content-between align-items-center">
-                    <h2 class="right__header-title">Thêm khóa học</h2>
+                    <h2 class="right__header-title">Trang chính</h2>
                     <div class="header__right d-flex">
                         <div class="rightSearch d-flex align-items-center">
                             <input type="text" name="username" id="username" placeholder="Tìm kiếm . . . "
                                 class="input__primary " required style="width: 300px; margin-right: 15px;" />
                             <div class="rightSearch__icon">
-                                <svg class="svg-icon icon-header" viewBox="0 0 20 20">
+                                <svg class="svg-icon icon-header border-search" viewBox="0 0 20 20">
                                     <path
                                         d="M18.125,15.804l-4.038-4.037c0.675-1.079,1.012-2.308,1.01-3.534C15.089,4.62,12.199,1.75,8.584,1.75C4.815,1.75,1.982,4.726,2,8.286c0.021,3.577,2.908,6.549,6.578,6.549c1.241,0,2.417-0.347,3.44-0.985l4.032,4.026c0.167,0.166,0.43,0.166,0.596,0l1.479-1.478C18.292,16.234,18.292,15.968,18.125,15.804 M8.578,13.99c-3.198,0-5.716-2.593-5.733-5.71c-0.017-3.084,2.438-5.686,5.74-5.686c3.197,0,5.625,2.493,5.64,5.624C14.242,11.548,11.621,13.99,8.578,13.99 M16.349,16.981l-3.637-3.635c0.131-0.11,0.721-0.695,0.876-0.884l3.642,3.639L16.349,16.981z">
                                     </path>
@@ -86,70 +86,10 @@
                 </div>
 
                 <div class="right__body">
-                    <div class="form__AddCourse">
-                        <form method="POST">
-                            <div class="form-group">
-                                <label for="name">Tên KH (*)</label>
-                                <input type="text" class="form-control" id="name" name="name"
-                                    placeholder="Tên khóa học">
-                                <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
-                            </div>
-                            <div class="form-group">
-                                <label for="description">Chi tiết</label>
-                                <input type="text" class="form-control" id="description" name="description"
-                                    placeholder="Chi tiết">
-                            </div>
-                            <div class="form-group">
-                                <label for="img">Hình đại diện</label>
-                                <input type="text" class="form-control" id="img" name="img" placeholder="">
-                            </div>
-                            <div class="form-group">
-                                <label for="studied">Sẽ học được gì</label>
-                                <div class="container-fluid" style="margin: 0; padding: 0;">
-                                    <div class="row ">
-                                        <div class="col-11 studied-parent">
-                                            <div>
-                                                <input type="text" class="form-control" id="studied" name="studied"
-                                                    placeholder="Sẽ học được gì">
-                                            </div>
-                                        </div>
-                                        <div class="col-1 d-flex align-items-end"
-                                            style="margin-bottom: 10px;" data-toggle="tooltip" data-placement="bottom"
-                                            title="Thêm học được gì">
-                                            <svg class="svg-icon icon-home add-studied" viewBox="0 0 20 20"
-                                                style="cursor: pointer;">
-                                                <path fill="none"
-                                                    d="M13.388,9.624h-3.011v-3.01c0-0.208-0.168-0.377-0.376-0.377S9.624,6.405,9.624,6.613v3.01H6.613c-0.208,0-0.376,0.168-0.376,0.376s0.168,0.376,0.376,0.376h3.011v3.01c0,0.208,0.168,0.378,0.376,0.378s0.376-0.17,0.376-0.378v-3.01h3.011c0.207,0,0.377-0.168,0.377-0.376S13.595,9.624,13.388,9.624z M10,1.344c-4.781,0-8.656,3.875-8.656,8.656c0,4.781,3.875,8.656,8.656,8.656c4.781,0,8.656-3.875,8.656-8.656C18.656,5.219,14.781,1.344,10,1.344z M10,17.903c-4.365,0-7.904-3.538-7.904-7.903S5.635,2.096,10,2.096S17.903,5.635,17.903,10S14.365,17.903,10,17.903z">
-                                                </path>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="request">Yêu cầu</label>
-                                <div class="row">
-                                    <div class="col-11 request-parent">
-                                        <div>
-                                            <input type="text" class="form-control" id="request" name="request"
-                                                placeholder="Yêu cầu">
-                                        </div>
-                                    </div>
-                                    <div class="col-1 d-flex align-items-end"
-                                        style="margin-bottom: 10px;" data-toggle="tooltip"
-                                        data-placement="bottom" title="Thêm yêu cầu">
-                                        <svg class="svg-icon icon-home add_request" viewBox="0 0 20 20" style="cursor: pointer;">
-                                            <path fill="none"
-                                                d="M13.388,9.624h-3.011v-3.01c0-0.208-0.168-0.377-0.376-0.377S9.624,6.405,9.624,6.613v3.01H6.613c-0.208,0-0.376,0.168-0.376,0.376s0.168,0.376,0.376,0.376h3.011v3.01c0,0.208,0.168,0.378,0.376,0.378s0.376-0.17,0.376-0.378v-3.01h3.011c0.207,0,0.377-0.168,0.377-0.376S13.595,9.624,13.388,9.624z M10,1.344c-4.781,0-8.656,3.875-8.656,8.656c0,4.781,3.875,8.656,8.656,8.656c4.781,0,8.656-3.875,8.656-8.656C18.656,5.219,14.781,1.344,10,1.344z M10,17.903c-4.365,0-7.904-3.538-7.904-7.903S5.635,2.096,10,2.096S17.903,5.635,17.903,10S14.365,17.903,10,17.903z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
+                    <div class="chart__test">
+                        <div>
+                            <canvas id="myChart"></canvas>
+                        </div>
                     </div>
                 </div>
             </div>

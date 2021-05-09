@@ -6,11 +6,15 @@ const Schema = mongoose.Schema;
 
 
 const Course = new Schema({
+    _id: Schema.Types.ObjectId,
     name: {type: String, maxLength: 200},
     description: {type: String},
     slug: { type: String, slug: "name", unique: true },
-    studied: {type: String},
-    request: {type: String},
+    img:
+    {
+        data: Buffer,
+        contentType: String
+    }
 },{
     timestamps: true.valueOf,
 });

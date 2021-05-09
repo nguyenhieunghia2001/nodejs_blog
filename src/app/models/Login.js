@@ -12,6 +12,7 @@ const login = new Schema({
   loginAt: { type: Date, default: Date.now},
   logoutAt: { type: Date, default: Date.now},
   action: { type: String, default: 'member'},
+  id_request: [{type: Schema.Types.ObjectId, ref: 'user'}],
   
 }, { collection: 'login' })
 

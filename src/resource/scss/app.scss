@@ -28,18 +28,13 @@ header {
   font-size: 18px;
   text-decoration: none;
 }
-.user__name:hover{
+.user__name:hover {
   text-decoration: none;
   color: #d15029;
 }
 
 .nav-stype {
   color: white;
-}
-
-.wellcome {
-  height: 700px;
-  margin-bottom: 100px;
 }
 
 .spaned {
@@ -69,14 +64,18 @@ header {
   border-radius: 10px;
   border: 0.1px solid #ebebeb;
 }
-.courseGrid:hover{
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+.courseGrid:hover {
+  box-shadow: rgba(87, 87, 87, 0.2) 0px 8px 24px;
 }
 
 .course_img {
-  height: 190px;
-  // background-image: url("https://img.youtube.com/vi/R6plN3FvzFY/sddefault.jpg");
-  background-size: cover;
+  height: 230px;
+  border-radius: 10px;
+}
+.course_img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
   border-radius: 10px;
@@ -270,10 +269,10 @@ a {
 }
 
 //icon fb gg login and register view
-.socialNetWork{
+.socialNetWork {
   margin-top: 20px;
 }
-.logo--social{
+.logo--social {
   fill: #4691f6;
   font-size: 50px;
 }
@@ -309,7 +308,7 @@ a {
 }
 
 //header
-.user__img{
+.user__img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -319,7 +318,7 @@ a {
 }
 
 //admin
-.admin{
+.admin {
   background-color: #ffede8;
 }
 
@@ -330,84 +329,100 @@ a {
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
 }
-.left__header{
+.left__header {
   font-weight: 400;
 }
-.left__header-title{
+.left__header-title {
   padding: 20px 0;
   text-align: center;
   color: #c9c9c9;
 }
-.left__nav{
+.left__nav {
   padding: 0 35px;
 }
 
-.nav-admin{
+.nav-admin {
   padding: 10px 15px;
   list-style-type: none;
   margin: 10px 0;
 }
-.nav-admin:hover{
+.nav-admin:hover {
   background-color: #edeaf1;
   border-radius: 5px;
 }
-.nav__admin-active{
+.nav__admin-active {
   background: linear-gradient(60deg, #d1784f, #d1a68d);
   border-radius: 5px;
 }
 
-.admin-link{
+.admin-link {
   text-decoration: none;
   margin: 0;
   color: black;
 }
-.admin-link:hover{
+.admin-link:hover {
   color: black;
 }
 
-.admin-link p{
+.admin-link p {
   font-size: 20px;
   margin: 0 0 0 20px;
-  
 }
 
-.icon-home{
+.icon-home {
   font-size: 40px;
 }
 
 /* //RIGHT */
-.right__header{
+.right__header {
   padding: 20px 40px;
   margin: 20px 10px 20px 0;
   background-color: white;
   border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 /* INPUT */
-.input__primary{
+.input__primary {
   padding: 5px 15px;
   border: 0.2px solid rgb(255, 202, 159);
   border-radius: 10px;
   font-weight: lighter;
 }
-.input__primary:focus{
+.input__primary:focus {
   outline: none;
   border: 0.2px solid rgb(255, 202, 159);
 }
-.icon-header{
+.icon-header {
   font-size: 30px;
 }
 
-.right__body{
+.right__body {
   background-color: white;
   height: 565px;
   border-radius: 10px;
   margin-top: 35px;
   margin-right: 10px;
   overflow: auto;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.05) 0px 8px 32px;
 }
 
-.table__course, .form__AddCourse{
+.table__course,
+.form__AddCourse {
   padding: 40px;
+}
+.backround {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  position: relative;
+  height: 700px;
+  margin-bottom: 100px;
+}
+.wellcome {
+  top: 39%;
+  left: 9%;
+  position: absolute;
+  color: #fff;
 }

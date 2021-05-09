@@ -1,5 +1,7 @@
 const Cource = require("../models/Cource");
 const DetailCource = require("../models/DetailCourse");
+const Request = require("../models/Request");
+const Studied = require("../models/Studied");
 const {mongooseToObject, mutipleMongooseToObject} = require('../../util/mongoos');
 
 class CourseController{
@@ -9,17 +11,17 @@ class CourseController{
         Cource.findOne({slug: req.params.slug})
             .then(course => {
                 DetailCource.find({slug_course: course.slug})
-                    .then(dtcourse => {
-                        console.log(req.user);
+                    .then(async dtcourse => {
+                        // console.log(req.user);
                         //lấy ra những gì đã học của khóa học
-                        const studied = course.studied.split('//');
+                        const studied = await Studied.find({id_course: course._id});
                         // lấy yêu cầu của khóa học
-                        const request = course.request.split('//');
+                        const request = await Request.find({id_course: course._id});
                         res.render(`courses/detail`, {
                                                         course: mongooseToObject(course), 
                                                         dtcourse: mutipleMongooseToObject(dtcourse),
-                                                        studied,
-                                                        request
+                                                        studied: mutipleMongooseToObject(studied),
+                                                        request: mutipleMongooseToObject(request),
                                                     });
                     })
                     .catch(next)

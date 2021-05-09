@@ -32,10 +32,6 @@ header {
 .nav-stype {
   color: white; }
 
-.wellcome {
-  height: 700px;
-  margin-bottom: 100px; }
-
 .spaned {
   color: #f0f0f0;
   padding: 0 5px; }
@@ -60,11 +56,16 @@ header {
   border: 0.1px solid #ebebeb; }
 
 .courseGrid:hover {
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; }
+  box-shadow: rgba(87, 87, 87, 0.2) 0px 8px 24px; }
 
 .course_img {
-  height: 190px;
-  background-size: cover;
+  height: 230px;
+  border-radius: 10px; }
+
+.course_img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
   border-radius: 10px; }
@@ -346,5 +347,20 @@ a {
   overflow: auto;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px; }
 
-.table__course, .form__AddCourse {
+.table__course,
+.form__AddCourse {
   padding: 40px; }
+
+.backround {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  position: relative;
+  height: 700px;
+  margin-bottom: 100px; }
+
+.wellcome {
+  top: 39%;
+  left: 9%;
+  position: absolute;
+  color: #fff; }

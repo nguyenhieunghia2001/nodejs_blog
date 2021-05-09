@@ -37,7 +37,6 @@ function route(app) {
     app.use('/adminhome', adminHomeRouter);
     app.use('/adminstudent', adminStudentRouter);
 
-
     app.use("/", homeRouter);
 }
 

@@ -1,25 +1,29 @@
-<div class="container-fluid">
-        <div class="row">
-            <div class="col-md-9">
-                <div class="video__main">
-                    <iframe class="main-videodetail" src="https://www.youtube.com/embed/{{id_video}}"></iframe>
-                </div>
+<div class="container-fluid" style="margin-top: 20px;">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="video__main" style="border-radius: 10px;">
+                <iframe class="main-videodetail" src="https://www.youtube.com/embed/{{idVideo}}"></iframe>
             </div>
-            <div class="col-md-3">
-                <div class="videos__list">
-                    <h4 style="margin-bottom: 25px; text-align: center;">Danh sách video</h4>
-                    <div class="videos__item">
-                        {{#each dtCourse}}
+        </div>
+        <div class="col-md-3">
+            <div class="videos__list">
+                <h4 style="margin-bottom: 25px; text-align: center;">Danh sách video</h4>
+                <div class="videos__item">
 
-                            <div class="video__play">
-                                <a href="/course/video/{{this.slug_course}}/{{this.id_video}}">
-                                    <h5 class="video__item--title">{{this.name_video}}</h5>
-                                </a>
-                            </div>
-
-                        {{/each}}
+                    {{#each dtCourse}}
+                    
+                    <div style="padding-right: 8px;">
+                        <div class="list-group">
+                            
+                            <a href="/course/video/{{this.slug_course}}/{{this.id_video}}" class="list-group-item list-group-item-action {{#if_equal ../idVideo this.id_video}} active {{/if_equal}}">
+                                {{sum @index}}. {{this.name_video}}
+                            </a>
+                        </div>
                     </div>
+                    {{/each}}
+
                 </div>
             </div>
         </div>
     </div>
+</div>
