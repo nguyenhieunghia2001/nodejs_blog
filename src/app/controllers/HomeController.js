@@ -1,12 +1,14 @@
 const Course = require("../models/Cource");
 const User = require("../models/user");
+const {mongooseToObject, mutipleMongooseToObject} = require('../../util/mongoos');
 
 class HomeController {
   index(req, res, next) {
-    Course.find({})
+    Course.aggregate([{ $limit: 5}])
       .then(cource => {
-        cource = cource.map(cource => cource.toObject());
-        res.render('home', { cource })
+        console.log(typeof cource);
+        // cource = cource.map(cource => cource.toObject());
+        res.render('home', { cource})
       })
       .catch(next)
     // res.render('home');

@@ -6,6 +6,7 @@ const router = express.Router()
 const courseController = require('../app/controllers/CourseController');
 const detailCourseController = require('../app/controllers/DetailCourseController');
 
+router.get('/', courseController.home);
 router.get('/create', courseController.create);
 router.post('/store', courseController.store);
 router.get('/video/:slug/:idvideo', detailCourseController.index);

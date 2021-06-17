@@ -1,56 +1,9 @@
-<div class="backround" style="background-image: url(./img/backgroud.jpg);">
-    <div class="wellcome">
-        <div class="container">
-            <p>Cùng nhau tạo ra nhiều giá trị hơn cho xã hội!</p>
-            <h1>HỌC LẬP TRÌNH ĐỂ ĐI LÀM!</h1>
-            <div>
-                <button class="btn btn-all">KHÓA HỌC</button>
-                {{#if currentUser}}
-                       
-                {{else}}
-                    <a href="/auth/login" class="btn btn-all">THAM GIA NGAY</a>
-                {{/if}}
-               
-            </div>
-        </div>
+<div class="container " style="padding: 40px 0;">
+    <div class="course-menu d-flex justify-content-center">
+        <a href="#" class=" btn course_btn-join">Tất cả khóa học</a>
+        <a href="#" class=" btn ">Dành cho bạn</a>
     </div>
-</div>
-
-<div class="introduce">
-    <div class="container">
-        <div class="row">
-            <div class="col-4 d-flex flex-column align-items-center" data-aos="fade-up"
-                data-aos-anchor-placement="center-bottom" data-aos-delay="210">
-                <div class="introduce_icon">
-                    <img src="/img/icon1.png" alt="lỗi hiển thị" width="76px" height="76px">
-                </div>
-                <p class="introduce_content">Trên 31.827 học viên</p>
-            </div>
-            <div class="col-4  d-flex flex-column align-items-center" data-aos="fade-up"
-                data-aos-anchor-placement="center-bottom" data-aos-delay="180">
-                <div class="introduce_icon">
-                    <img src="/img/icon2.png" alt="lỗi hiển thị" width="76px" height="76px">
-                </div>
-                <p class="introduce_content">9+ khóa học dành cho bạn</p>
-            </div>
-            <div class="col-4  d-flex flex-column align-items-center" data-aos="fade-up"
-                data-aos-anchor-placement="center-bottom" data-aos-delay="150">
-                <div class="introduce_icon">
-                    <img src="/img/icon3.png" alt="lỗi hiển thị" width="76px" height="76px">
-                </div>
-                <p class="introduce_content">Học bất cứ lúc nào, bất cứ nơi đâu</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="courseshightligth" style="margin: 50px 0;">
-    <div class="title_coursehighligth d-flex flex-column align-items-center" style="margin: 20px 0 ;">
-        <h2 class="title_big">Khóa học nổi bật</h2>
-        <p class="content">Những khóa học có số lượng học viên theo học nhiều nhất và có phản hồi tích cực nhất</p>
-    </div>
-    <div class="container">
-        <div class="row">
+    <div class="row">
             {{#each cource}}
             <div class="col-4">
                 <div class="courseGrid" style="margin: 20px 0;">
@@ -87,9 +40,4 @@
             </div>
             {{/each}}
         </div>
-    </div>
-</div>
-
-<div class="watch_allCourses d-flex justify-content-center align-items-center">
-    <button class="btn btn_allCourses">Tất cả khóa học</button>
 </div>

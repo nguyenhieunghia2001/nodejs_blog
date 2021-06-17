@@ -4,8 +4,8 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "start": "nodemon --inspect src/index.js",
-    "watch": "node-sass src/resource/scss/app.scss src/public/css/app.css",
+    "dev": "nodemon --inspect src/index.js",
+    "watch": "node-sass --watch src/resource/scss/app.scss src/public/css/app.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -34,6 +34,7 @@
     "handlebars-helpers": "^0.10.0",
     "mongoose": "^5.11.19",
     "mongoose-slug-generator": "^1.0.4",
+    "morgan": "^1.10.0",
     "multer": "^1.4.2",
     "passport": "^0.4.1",
     "passport-facebook": "^3.0.0"

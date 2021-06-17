@@ -165,30 +165,6 @@ a {
   margin: 15px 0 0 20px;
 }
 
-.content__videos-list {
-  list-style-type: none;
-}
-// .content__videos-list li {
-// margin: 8px 0;
-// border: 0.2px solid #dadada;
-// padding: 5px 15px;
-// border-radius: 5px;
-// }
-
-// .content__videos-list li:hover {
-//   background-color: #ffe3c4;
-//   border: 0.2px solid transparent;
-// }
-
-.content__videos-list li a {
-  text-decoration: none;
-  color: black;
-}
-.content__videos-list li a:hover {
-  text-decoration: none;
-  color: #d15029;
-}
-
 .video__main {
   position: relative;
   width: 100%;
@@ -219,11 +195,6 @@ a {
 .video__item--title {
   font-size: 20px;
   font-weight: 300;
-}
-
-.videos__item {
-  height: 570px;
-  overflow-y: scroll;
 }
 
 /* Login */
@@ -426,3 +397,5 @@ a {
   position: absolute;
   color: #fff;
 }
+
+@import "index.scss";

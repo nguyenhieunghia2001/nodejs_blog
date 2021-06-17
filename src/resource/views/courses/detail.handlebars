@@ -29,23 +29,11 @@
                     <div class="content-videos">
                         <ul class="content__videos-list">
                             {{#each dtcourse}}
-                            <li style="margin-bottom: 10px;">
+                            <li>
                                 <a href="/course/video/{{this.slug_course}}/{{id_video}}"
                                     class="d-flex align-items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20"
-                                        viewBox="0 0 172 172" style=" fill:#000000;">
-                                        <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
-                                            stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
-                                            stroke-dasharray="" stroke-dashoffset="0" font-family="none"
-                                            font-weight="none" font-size="none" text-anchor="none"
-                                            style="mix-blend-mode: normal">
-                                            <path d="M0,172v-172h172v172z" fill="none"></path>
-                                            <g fill="#e67e22">
-                                                <path d="M34.4,18.06v135.86656l115.48188,-67.92656z"></path>
-                                            </g>
-                                        </g>
-                                    </svg>
-                                    <span style="margin-left: 10px;">{{this.name_video}}</span>
+                                    <i class="fas fa-play-circle"></i>
+                                    <span style="margin-left: 10px;">{{sum @index}}. {{this.name_video}}</span>
                                 </a>
                             </li>
                             {{/each}}

@@ -1,0 +1,43 @@
+.content {
+  &__videos-list {
+    list-style-type: none;
+    li {
+      padding: 13px 0px;
+      border-bottom: 0.2px solid #dddada;
+      a {
+        text-decoration: none;
+        font-size: 18px;
+        color: #585858;
+
+        &:hover {
+          text-decoration: none;
+          color: #d15029;
+        }
+      }
+      i {
+        color: #d15029;
+      }
+    }
+  }
+}
+
+.videos {
+  &__item {
+    height: 570px;
+    overflow-y: scroll;
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      li {
+          cursor: pointer;
+        padding: 15px 25px;
+        color: #bdbdbd;
+      }
+    }
+    &-played {
+      background: #f0d5d5;
+      color: #222 !important;
+    }
+  }
+}
