@@ -2,6 +2,8 @@ const Cource = require("../models/Cource");
 const DetailCource = require("../models/DetailCourse");
 const Request = require("../models/Request");
 const Studied = require("../models/Studied");
+const RegisterCourse = require("../models/RegisterCourse");
+const mongoose = require("mongoose");
 const {
   mongooseToObject,
   mutipleMongooseToObject,
@@ -44,6 +46,21 @@ class CourseController {
   create(req, res, next) {
     res.render("courses/create");
   }
+
+  //[GET]
+  async register(req, res, next) {
+    const { idcourse } = req.params,
+      { emailUser } = req.session;
+
+    Cource.findOne({ slug: idcourse })
+      .then(async c => {
+        const register = new RegisterCourse({_id: new mongoose.Types.ObjectId(), email: emailUser, id_course: c._id });
+        await register.save();
+      })
+      .catch(next)
+
+    res.render("courses/create");
+  }
   //[POST]
   store(req, res, next) {
     const FormData = req.body;
@@ -51,7 +68,7 @@ class CourseController {
     course
       .save()
       .then(() => res.redirect("/home"))
-      .catch((err) => {});
+      .catch((err) => { });
   }
 }
 

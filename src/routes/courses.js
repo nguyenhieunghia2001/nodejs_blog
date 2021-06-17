@@ -8,6 +8,7 @@ const detailCourseController = require('../app/controllers/DetailCourseControlle
 
 router.get('/', courseController.home);
 router.get('/create', courseController.create);
+router.get('/register/:idcourse', courseController.register);
 router.post('/store', courseController.store);
 router.get('/video/:slug/:idvideo', detailCourseController.index);
 router.get('/:slug', courseController.index);
