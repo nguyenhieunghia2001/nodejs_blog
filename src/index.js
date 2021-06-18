@@ -9,8 +9,15 @@ const route = require('./routes');
 const db = require('./config/database')
 const cookieParser = require('cookie-parser')
 const passport = require('passport');
-const FacebookStrategy  = require('passport-facebook').Strategy;
+const FacebookStrategy = require('passport-facebook').Strategy;
 const config = require('./config');
+const Login = require("./app/models/Login");
+const User = require("./app/models/user");
+const {
+  mongooseToObject,
+  mutipleMongooseToObject,
+} = require("./util/mongoos");
+
 
 const handlebars_hp = require('handlebars');
 const helpers = require('handlebars-helpers')({
@@ -27,6 +34,7 @@ app.use(cookieSession({
   // Cookie Options
   maxAge: 24 * 60 * 60 * 1000 // 24 hours
 }))
+
 app.use(authMiddleware);
 
 //cookie parser
@@ -42,8 +50,20 @@ app.use(express.json());
 
 var hbs = handlebars.create({
   helpers: {
-    if_equal: (a, b, opts) => a == b ? opts.fn(this)  : opts.inverse(this),
+    if_equal: (a, b, opts) => a == b ? opts.fn(this) : opts.inverse(this),
     sum: (value) => value + 1,
+    contain: (elem, list, options) => {
+      if(list){
+        const arr = Object.values(list);
+        if (arr?.indexOf(elem) > -1) {
+          return options.fn(this);
+        }
+        else{
+          return options.inverse(this);
+        }
+      }
+      return options.inverse(this);
+    }
   }
 });
 
@@ -51,31 +71,38 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'resource', 'views'));
 
-// console.log(path.join(__dirname, 'resource', 'views'));
-//passport
-passport.serializeUser(function(user, done) {
-  done(null, user);
-});
+// //load user locals
+// app.use(function (req, res, next) {
+// 	const { emailUser } = req.session;
+//     // res.send(req.cookies);
+//     res.locals.currentUser = null;
+//     if (emailUser) {
+//         // console.log(userId);
+//         Login.findOne({ email: emailUser })
+//             .then((account) => {
+//                 req.user = account;
+//                 res.locals.currentUser = mongooseToObject(account);
+//                 // console.log(res.locals.currentUser);
+//                 User.findOne({ email: emailUser })
+//                     .then(u => {
+//                         res.locals.userName = u.username;
+//                         next();
+//                     })
+//                     .catch(() => {
+//                         console.log('lỗi tìm user trong middleware');
+//                         next();
+//                     });
 
-passport.deserializeUser(function(obj, done) {
-  done(null, obj);
-});
-
-// Use the FacebookStrategy within Passport.
-passport.use(new FacebookStrategy({
-    clientID: config.facebook_api_key,
-    clientSecret:config.facebook_api_secret ,
-    callbackURL: config.callback_url
-  },
-  function(accessToken, refreshToken, profile, done) {
-    process.nextTick(function () {
-      console.log(accessToken, refreshToken, profile, done);
-      return done(null, profile);
-    });
-  }
-));
-app.use(passport.initialize());
-app.use(passport.session());
+//             })
+//             .catch((err) => {
+//                 console.log(err);
+//                 next();
+//             });
+//     }
+//     else {
+//         next();
+//     }
+// });
 
 //route init
 route(app);

@@ -6,11 +6,11 @@
             <div>
                 <a href="/course" class="btn btn-all">KHÓA HỌC</a>
                 {{#if currentUser}}
-                       
+
                 {{else}}
-                    <a href="/auth/login" class="btn btn-all">THAM GIA NGAY</a>
+                <a href="/auth/login" class="btn btn-all">THAM GIA NGAY</a>
                 {{/if}}
-               
+
             </div>
         </div>
     </div>
@@ -54,7 +54,13 @@
             {{#each cource}}
             <div class="col-4">
                 <div class="courseGrid" style="margin: 20px 0;">
-                    <a href="/course/{{this.slug}}">
+                  
+                    {{#contain @root.currentUser.email this._emailUser}}
+                                /course/video/{{this.slug}}
+                            {{else}}
+                                /course/{{this.slug}}
+                            {{/contain}}
+                    <a href="{{#contain @root.currentUser.email this._emailUser}}11{{else}}12{{/contain}}">
                         <div class="course_img">
                             <img src="./picture/{{this._id}}" alt="">
                         </div>
@@ -63,7 +69,8 @@
                     <div class="course__body" style="padding: 0 12px;">
                         <a href="/course/{{this.slug}}" class="move_detailcourse">
                             <div class="course_title" style="margin-top: 10px;">
-                                <h6>{{this.name}}</h5>
+                                <h6>{{this.name}}</h6>
+
                             </div>
                         </a>
                         <div class="course_content">

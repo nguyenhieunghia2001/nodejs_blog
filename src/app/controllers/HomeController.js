@@ -6,13 +6,13 @@ class HomeController {
   index(req, res, next) {
     Course.aggregate([{ $limit: 5}])
       .then(cource => {
-        console.log(typeof cource);
-        // cource = cource.map(cource => cource.toObject());
-        res.render('home', { cource})
+        // console.log(res.locals.currentUser);
+        // console.log(cource[0]._emailUser[0]);
+        res.render('home', { cource, test: ['ant', 'bison', 'camel', 'duck', 'bison'] });
       })
       .catch(next)
-    // res.render('home');
   }
+
   picture(req, res, next) {
     Course.findOne({ _id: req.params.id })
       .then(course => {

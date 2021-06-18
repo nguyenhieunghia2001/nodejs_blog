@@ -1,4 +1,5 @@
 const Cource = require("../models/Cource");
+const User = require("../models/user");
 const DetailCource = require("../models/DetailCourse");
 const Request = require("../models/Request");
 const Studied = require("../models/Studied");
@@ -47,19 +48,24 @@ class CourseController {
     res.render("courses/create");
   }
 
-  //[GET]
+  //[GET] Register course for user
   async register(req, res, next) {
     const { idcourse } = req.params,
       { emailUser } = req.session;
 
-    Cource.findOne({ slug: idcourse })
-      .then(async c => {
-        const register = new RegisterCourse({_id: new mongoose.Types.ObjectId(), email: emailUser, id_course: c._id });
-        await register.save();
+    const course = await Cource.findOneAndUpdate(
+      { slug: idcourse },
+      {
+        $push: { _emailUser: emailUser },
       })
-      .catch(next)
 
-    res.render("courses/create");
+    //update user
+    await User.findOneAndUpdate(
+      { email: emailUser },
+      {
+        $push: { _idCourse: course._id },
+      })
+    res.redirect(`../../course/video/${idcourse}`);
   }
   //[POST]
   store(req, res, next) {

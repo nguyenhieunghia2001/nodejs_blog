@@ -14,7 +14,8 @@ const Course = new Schema({
     {
         data: Buffer,
         contentType: String
-    }
+    },
+    _emailUser: [{type: String, ref: "User"}],
 },{
     timestamps: true.valueOf,
 });

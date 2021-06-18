@@ -32,14 +32,19 @@
             </div>
         </nav>
         <div class="user d-flex align-items-center">
+            
             {{#if currentUser}}
-            <a href="/adminhome" class="user__name" >Admin</a>
-            <div class="user__img" style="background-image: url(../../../img/icon1.png); margin: 0 10px 0 10px"></div>
-            <a href="/user/{{currentUser._id}}" class="user__name" data-toggle="tooltip" data-placement="bottom"
-                title="Quản lý tài khoản">
-                {{userName}}
-            </a>
+                {{#if_equal currentUser.action "admin"}}
+                    <a href="/adminhome" class="user__name">Admin</a>
+                {{/if_equal}}
+                    <div class="user__img" style="background-image: url(../../../img/icon1.png); margin: 0 10px 0 10px"></div>
+                    
+                    <a href="/user/{{currentUser._id}}" class="user__name" data-toggle="tooltip" data-placement="bottom"
+                        title="Quản lý tài khoản">
+                        {{userName}}
+                    </a>
             {{/if}}
+            
         </div>
     </div>
 </header>

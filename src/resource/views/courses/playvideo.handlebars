@@ -13,10 +13,11 @@
         <h4 style="margin-bottom: 25px; text-align: center;">Danh sách video</h4>
         <div class="videos__item">
           <ul>
-
+            {{!-- {{#if_equal ../idVideo this.id_video}} videos__item-played {{/if_equal}} --}}
             {{#each dtCourse}}
-              <li data-slug="{{this.id_video}}" class="{{#if_equal ../idVideo this.id_video}} videos__item-played {{/if_equal}} courses-mp4">
-                {{sum @index}}. {{this.name_video}}
+              <li data-slug="{{this.id_video}}" class="courses-mp4">
+                {{sum @index}}.
+                {{this.name_video}}
               </li>
             {{/each}}
 

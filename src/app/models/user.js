@@ -17,6 +17,7 @@ const user = new Schema({
   createAt: { type: Date, default: Date.now },
   updateAt: { type: Date, default: Date.now },
   // action: { type: String, default: 'System'},
+  _idCourse: [{type: Schema.Types.ObjectId, ref: "Course"}],
 
 }, { collection: 'user' })
 
