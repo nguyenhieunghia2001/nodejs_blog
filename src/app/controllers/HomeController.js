@@ -8,7 +8,7 @@ class HomeController {
       .then(cource => {
         // console.log(res.locals.currentUser);
         // console.log(cource[0]._emailUser[0]);
-        res.render('home', { cource, test: ['ant', 'bison', 'camel', 'duck', 'bison'] });
+        res.render('home', { cource, test: ['ant', 'bison', 'camel', 'duck', 'bison'], title: 'Trang chủ' });
       })
       .catch(next)
   }

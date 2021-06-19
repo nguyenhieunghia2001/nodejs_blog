@@ -4,19 +4,28 @@
         <a href="#" class=" btn ">Dành cho bạn</a>
     </div>
     <div class="row">
-            {{#each cource}}
+             {{#each cource as | course |}}
             <div class="col-4">
                 <div class="courseGrid" style="margin: 20px 0;">
-                    <a href="/course/{{this.slug}}">
+                    <a href="{{#contain @root.currentUser.email this._emailUser}}
+                                /course/video/{{course.slug}}
+                            {{else}}
+                                /course/{{course.slug}}
+                            {{/contain}}">
                         <div class="course_img">
                             <img src="./picture/{{this._id}}" alt="">
                         </div>
                     </a>
 
                     <div class="course__body" style="padding: 0 12px;">
-                        <a href="/course/{{this.slug}}" class="move_detailcourse">
+                        <a href="{{#contain @root.currentUser.email this._emailUser}}
+                                /course/video/{{course.slug}}
+                            {{else}}
+                                /course/{{course.slug}}
+                            {{/contain}}" class="move_detailcourse">
                             <div class="course_title" style="margin-top: 10px;">
-                                <h6>{{this.name}}</h5>
+                                <h6>{{this.name}}</h6>
+
                             </div>
                         </a>
                         <div class="course_content">

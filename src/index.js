@@ -45,10 +45,11 @@ console.log(__dirname);
 app.use(express.urlencoded({
   extended: true
 }));
+
 app.use(express.json());
 
-
 var hbs = handlebars.create({
+  defaultLayout: 'main',
   helpers: {
     if_equal: (a, b, opts) => a == b ? opts.fn(this) : opts.inverse(this),
     sum: (value) => value + 1,
@@ -70,40 +71,6 @@ var hbs = handlebars.create({
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'resource', 'views'));
-
-// //load user locals
-// app.use(function (req, res, next) {
-// 	const { emailUser } = req.session;
-//     // res.send(req.cookies);
-//     res.locals.currentUser = null;
-//     if (emailUser) {
-//         // console.log(userId);
-//         Login.findOne({ email: emailUser })
-//             .then((account) => {
-//                 req.user = account;
-//                 res.locals.currentUser = mongooseToObject(account);
-//                 // console.log(res.locals.currentUser);
-//                 User.findOne({ email: emailUser })
-//                     .then(u => {
-//                         res.locals.userName = u.username;
-//                         next();
-//                     })
-//                     .catch(() => {
-//                         console.log('lỗi tìm user trong middleware');
-//                         next();
-//                     });
-
-//             })
-//             .catch((err) => {
-//                 console.log(err);
-//                 next();
-//             });
-//     }
-//     else {
-//         next();
-//     }
-// });
-
 //route init
 route(app);
 

@@ -12,12 +12,12 @@ class ManageCourseController {
     async index(req, res, next) {
         const courses = await Course.find({});
 
-        res.render('admin/course/home', { courses: mutipleMongooseToObject(courses) });
+        res.render('admin/course/home', { courses: mutipleMongooseToObject(courses), layout: 'admin', title: 'Courses Admin' });
     }
 
     async addcourseIndex(req, res, next) {
 
-        res.render('admin/course/addCourse');
+        res.render('admin/course/addCourse', {layout: 'admin', title: 'Courses Admin'});
     }
 
     async addcourse(req, res, next) {
@@ -73,7 +73,7 @@ class ManageCourseController {
                 });
             })
             .catch(() => {
-                return res.render('admin/course/updateCourse', { course: null });
+                return res.render('admin/course/updateCourse', { course: null, layout: 'admin', title: 'Courses Admin' });
             })
 
     }
