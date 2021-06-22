@@ -1,4 +1,4 @@
-<div class="course">
+<div class="course" style="margin-top: 40px;">
     <div class="container">
         <div class="row">
             <div class="col-md-8">
@@ -8,8 +8,8 @@
                 <div class="course__willstudy">
                     <h4>Bạn sẽ học được gì</h4>
                     <ul class="willstudy--list">
+                        {{#if studied}}
                         {{#each studied}}
-
                         <li class="willstudy__list-items d-flex align-items-center">
                             <svg class="svg-icon icon--check" viewBox="0 0 20 20">
                                 <path fill="none" style="fill: red;"
@@ -18,8 +18,15 @@
                             </svg>
                             <span>{{this.studied}}</span>
                         </li>
-
                         {{/each}}
+                        {{else}}
+                            <div class="empty d-flex flex-column align-items-center">
+                                <div class="empty__icon">
+                                    <i class="fab fa-reddit-alien"></i>
+                                </div>
+                                <p>Sẽ được cập nhật sau!!</p>
+                            </div>
+                        {{/if}}
                     </ul>
 
                 </div>
@@ -28,15 +35,24 @@
                     <h4 style="margin: 15px 0;">Nội dung khóa học</h4>
                     <div class="content-videos">
                         <ul class="content__videos-list">
-                            {{#each dtcourse}}
+                            {{#if lessons}}
+                            {{#each lessons}}
                             <li>
-                                <a href="/course/video/{{this.slug_course}}/{{id_video}}"
+                                <a href="javascript:void(0)"
                                     class="d-flex align-items-center">
                                     <i class="fas fa-play-circle"></i>
                                     <span style="margin-left: 10px;">{{sum @index}}. {{this.name_video}}</span>
                                 </a>
                             </li>
                             {{/each}}
+                            {{else}}
+                            <div class="empty d-flex flex-column align-items-center">
+                                <div class="empty__icon">
+                                    <i class="fab fa-reddit-alien"></i>
+                                </div>
+                                <p>Sẽ được cập nhật sau!!</p>
+                            </div>
+                        {{/if}}
                         </ul>
                     </div>
                 </div>
@@ -45,6 +61,7 @@
                     <h4 class="title">Yêu cầu</h4>
                     <div class="request-contain">
                         <ul class="intro--list">
+                            {{#if request}}
                             {{#each request }}
                             <li class="requesr-content--items d-flex align-items-center">
                                 <svg class="svg-icon icon--check" viewBox="0 0 20 20">
@@ -54,15 +71,22 @@
                                 </svg>
                                 <span>{{this.request}}</span>
                             </li>
-
                             {{/each}}
+                            {{else}}
+                            <div class="empty d-flex flex-column align-items-center">
+                                <div class="empty__icon">
+                                    <i class="fab fa-reddit-alien"></i>
+                                </div>
+                                <p>Sẽ được cập nhật sau!!</p>
+                            </div>
+                        {{/if}}
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 d-flex flex-column align-items-center">
                 <div class="course__videowellcome">
-                    <iframe width="auto" height="auto" src="https://www.youtube.com/embed/yuaiu-r5DrE" frameborder="0"
+                    <iframe width="auto" height="auto" src="https://www.youtube.com/embed/{{lessons.[0].id_video}}" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
                 </div>

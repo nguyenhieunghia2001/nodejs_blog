@@ -9,16 +9,12 @@ const user = new Schema({
   _id: Schema.Types.ObjectId,
   email: { type: String, default: '' },
   username: { type: String, default: '' },
-  gender: {type: String, default: 'male'},
-  // avartar: {type: Image, default: ''},
+  gender: { type: String, default: 'male' },
   status: { type: String, default: 'noactive' },
+  _idCourse: [{ type: Schema.Types.ObjectId, ref: "Course" }],
 
-  deleteAt: { type: Date, default: Date.now },
-  createAt: { type: Date, default: Date.now },
-  updateAt: { type: Date, default: Date.now },
-  // action: { type: String, default: 'System'},
-  _idCourse: [{type: Schema.Types.ObjectId, ref: "Course"}],
-
-}, { collection: 'user' })
+},
+  { collection: 'user' },
+  { timestamps: true.valueOf });
 
 module.exports = mongoose.model('user', user);

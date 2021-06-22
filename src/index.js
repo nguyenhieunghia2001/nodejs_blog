@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const handlebars = require('express-handlebars');
 const app = express()
@@ -64,7 +65,8 @@ var hbs = handlebars.create({
         }
       }
       return options.inverse(this);
-    }
+    },
+    countObject: (list) => Object.keys(list).length
   }
 });
 

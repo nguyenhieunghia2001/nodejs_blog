@@ -15,7 +15,10 @@ const Course = new Schema({
         data: Buffer,
         contentType: String
     },
-    _emailUser: [{type: String, ref: "User"}],
+    _emailUser: [{type: String, ref: "user"}],
+    requests: [{type: Schema.Types.ObjectId, ref: 'Request'}],
+    studies: [{type: Schema.Types.ObjectId, ref: 'Studied'}],
+    lessons: [{type: Schema.Types.ObjectId, ref: 'Detail_Courses'}],
 },{
     timestamps: true.valueOf,
 });

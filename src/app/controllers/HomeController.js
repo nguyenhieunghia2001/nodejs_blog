@@ -6,9 +6,7 @@ class HomeController {
   index(req, res, next) {
     Course.aggregate([{ $limit: 5}])
       .then(cource => {
-        // console.log(res.locals.currentUser);
-        // console.log(cource[0]._emailUser[0]);
-        res.render('home', { cource, test: ['ant', 'bison', 'camel', 'duck', 'bison'], title: 'Trang chủ' });
+        res.render('home', { cource, title: 'Trang chủ' });
       })
       .catch(next)
   }

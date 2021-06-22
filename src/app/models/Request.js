@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 
 
 const Request = new Schema({
-    id_course: {type: String},
+    id_course: {type: Schema.Types.ObjectId},
     request: {type: String},
 },{
     timestamps: true.valueOf,

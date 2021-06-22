@@ -3,8 +3,8 @@ const { mongooseToObject, mutipleMongooseToObject } = require('../../util/mongoo
 
 class DetailCourseController {
     index(req, res, next) {
-        const idCourse = req.params.slug;
-        DetailCource.find({ slug_course: idCourse })
+        const { courseid } = req.query;
+        DetailCource.find({ id_course: courseid })
             .then(dtCourse => {
                 res.render('courses/playvideo', {
                     dtCourse: mutipleMongooseToObject(dtCourse),

@@ -1,0 +1,56 @@
+/* khóa học nổi bật */
+.course {
+  &__card {
+    height: 440px;
+    border-radius: 10px;
+    border: 0.1px solid #ebebeb;
+    &:hover {
+      box-shadow: rgba(87, 87, 87, 0.2) 0px 8px 24px;
+    }
+    &-footer {
+      border-top: 1px solid #bdbdbd;
+      padding: 5px 15px;
+    }
+    h6 {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  &_content {
+    padding: 5px 10px;
+    width: auto;
+    height: 120px;
+    line-height: 1.4em;
+    display: flex;
+    -webkit-line-clamp: 5;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  &_img {
+    height: 230px;
+    border-radius: 10px;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      border-radius: 10px;
+    }
+    // &title,
+    // &content {
+    //   padding: 5px 10px;
+    // }
+  }
+}
+
+// DETAIL COURSE
+.empty{
+  color: #555;
+  &__icon{
+    i{
+      font-size: 50px;
+    }
+  }
+}

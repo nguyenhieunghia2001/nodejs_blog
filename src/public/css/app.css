@@ -49,31 +49,6 @@ header {
 .col-4 {
   min-width: 300px; }
 
-/* khóa học nổi bật */
-.courseGrid {
-  height: 440px;
-  border-radius: 10px;
-  border: 0.1px solid #ebebeb; }
-
-.courseGrid:hover {
-  box-shadow: rgba(87, 87, 87, 0.2) 0px 8px 24px; }
-
-.course_img {
-  height: 230px;
-  border-radius: 10px; }
-
-.course_img img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  border-radius: 10px; }
-
-.course_title,
-.course_content {
-  padding: 5px 10px; }
-
 .move_detailcourse {
   text-decoration: none; }
 
@@ -374,7 +349,49 @@ a {
     .videos__item ul li {
       cursor: pointer;
       padding: 15px 25px;
-      color: #bdbdbd; }
+      color: #767676;
+      background: #faf7f7; }
   .videos__item-played {
-    background: #f0d5d5;
+    background: #f0d5d5 !important;
     color: #222 !important; }
+
+/* khóa học nổi bật */
+.course__card {
+  height: 440px;
+  border-radius: 10px;
+  border: 0.1px solid #ebebeb; }
+  .course__card:hover {
+    box-shadow: rgba(87, 87, 87, 0.2) 0px 8px 24px; }
+  .course__card-footer {
+    border-top: 1px solid #bdbdbd;
+    padding: 5px 15px; }
+  .course__card h6 {
+    margin: 0;
+    padding: 0; }
+
+.course_content {
+  padding: 5px 10px;
+  width: auto;
+  height: 120px;
+  line-height: 1.4em;
+  display: flex;
+  -webkit-line-clamp: 5;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden; }
+
+.course_img {
+  height: 230px;
+  border-radius: 10px; }
+  .course_img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border-radius: 10px; }
+
+.empty {
+  color: #555; }
+  .empty__icon i {
+    font-size: 50px; }

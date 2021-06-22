@@ -6,10 +6,11 @@ const {
 } = require("../util/mongoos");
 
 module.exports = {
-  auth: (req, res, next) => {
-    if (req.isAuthenticated()) {
-        const user = req.user;
-        res.locals.currentUser = user;
+  isAuth: (req, res, next) => {
+    const { emailUser } = req.session;
+    if (emailUser) {
+        // const user = req.user;
+        // res.locals.currentUser = user;
         return next();
     }
     return res.redirect('/auth/login');

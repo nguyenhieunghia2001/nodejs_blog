@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 
 
 const Studied = new Schema({
-    id_course: {type: String},
+    id_course: {type: Schema.Types.ObjectId},
     studied: {type: String},
 },{
     timestamps: true.valueOf,

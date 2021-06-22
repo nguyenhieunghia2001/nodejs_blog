@@ -58,33 +58,6 @@ header {
   min-width: 300px;
 }
 
-/* khóa học nổi bật */
-.courseGrid {
-  height: 440px;
-  border-radius: 10px;
-  border: 0.1px solid #ebebeb;
-}
-.courseGrid:hover {
-  box-shadow: rgba(87, 87, 87, 0.2) 0px 8px 24px;
-}
-
-.course_img {
-  height: 230px;
-  border-radius: 10px;
-}
-.course_img img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  border-radius: 10px;
-}
-.course_title,
-.course_content {
-  padding: 5px 10px;
-}
-
 .move_detailcourse {
   text-decoration: none;
 }
@@ -399,3 +372,4 @@ a {
 }
 
 @import "index.scss";
+@import "home.scss";

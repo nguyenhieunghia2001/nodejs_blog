@@ -21,9 +21,9 @@ class ManageCourseController {
     }
 
     async addcourse(req, res, next) {
-        const { name, description, studied, request } = req.body;
+        const { name, description, studied, request, video } = req.body;
 
-
+        //thêm khóa học
         const course = new Course({
             _id: new mongoose.Types.ObjectId(),
             name: name,
@@ -36,6 +36,7 @@ class ManageCourseController {
         });
         await course.save();
 
+        //lấy danh sách yêu cầu để add
         let ReqList = [];
         request.forEach((r) => {
             ReqList.push({
@@ -43,6 +44,8 @@ class ManageCourseController {
                 request: r,
             });
         });
+
+        //lấy danh sách sẽ học được gì để add
         let StuList = [];
         studied.forEach((r) => {
             StuList.push({
@@ -51,8 +54,16 @@ class ManageCourseController {
             });
         });
 
-        await Request.insertMany(ReqList);
-        await Studied.insertMany(StuList);
+        const requestInsert = await Request.insertMany(ReqList);
+        const studiedInsert = await Studied.insertMany(StuList);
+
+        // //cập nhật lại id studied và request cho Collection Course
+        // Course.findOneAndUpdate(
+        //     {_id: course._id},
+        //     {
+        //         $push: { _idCourse: course._id },
+        //     }
+        // )
 
         res.redirect('../../admincourse');
         // res.json(req.file.buffer);
@@ -70,6 +81,8 @@ class ManageCourseController {
                     course: mongooseToObject(course),
                     requests: mutipleMongooseToObject(requests),
                     studieds: mutipleMongooseToObject(studieds),
+                    layout: 'admin',
+                    title: 'Courses Admin'
                 });
             })
             .catch(() => {
@@ -101,7 +114,20 @@ class ManageCourseController {
         // res.redirect('../../admincourse')
         await Course.deleteOne({ _id: id})
                 .then(() => res.redirect('../../admincourse'))
-                .catch (next())
+                .catch (next)
+    }
+    
+    async lesson(req, res, next){
+        const { courseid } = req.query;
+
+        await DetailCourse.find({ id_course: courseid })
+                .then((dt) => {
+                    res.render('admin/course/lesson/home', { 
+                        lessons: mutipleMongooseToObject(dt), 
+                        layout: 'admin', 
+                        title: 'Courses Admin' });
+                })
+                .catch (next)
     }
 }
 

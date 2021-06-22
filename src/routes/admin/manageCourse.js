@@ -15,6 +15,8 @@ router.post('/addcourse', upload.single('image'), manageCourseController.addcour
 router.get('/updatecourse/:id', manageCourseController.updatecourseIndex);
 router.post('/updatecourse/:id', upload.single('image'), manageCourseController.updatecourse);
 
+router.get('/lesson', manageCourseController.lesson);
+
 router.get('/delcourse/:id', manageCourseController.delcourse);
 
 module.exports = router;

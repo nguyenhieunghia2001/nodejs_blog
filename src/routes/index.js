@@ -1,35 +1,23 @@
 const homeRouter = require("./home");
 const courseRouter = require("./courses");
+const lessonRouter = require("./api/admin/lesson");
 const authRouter = require("./auth");
 const userRouter = require("./user");
 const adminCourseRouter = require("./admin/manageCourse");
 const adminStudentRouter = require("./admin/manageStudent");
 const adminHomeRouter = require("./admin/home");
+const { isAuth } = require("../middlewares/authenlicate");
 
 const siteRouter = require("./site");
 
 function route(app) {
-    let users = {
-        name: "Ritik",
-        Age: "18",
-    };
-
-    //Route for adding cookie
-    app.get("/setuser", (req, res) => {
-        res.cookie("userData", users.name);
-        res.send("user data added to cookie");
-    });
-    app.get('/getuser', (req, res) => {
-        //shows all the cookies
-        res.send(req.cookies.userData);
-    });
-    app.get('/logout', (req, res)=>{
+    app.get('/logout', (req, res) => {
         //it will clear the userData cookie
         res.clearCookie('userData');
         res.send('user logout successfully');
-        });
-    app.use("/search", siteRouter);
+    });
     app.use("/course", courseRouter);
+    app.use("/lesson", lessonRouter);
     app.use("/auth", authRouter);
     app.use("/user", userRouter);
 
