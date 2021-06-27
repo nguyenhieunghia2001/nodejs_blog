@@ -8,7 +8,6 @@ const {
 const { sendMail } = require('../../config/service/mailer');
 //hash
 const bcrypt = require("bcrypt");
-const { renderSync } = require("node-sass");
 const saltRounds = 10;
 
 class AuthController {
