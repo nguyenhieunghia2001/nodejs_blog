@@ -1,4 +1,3 @@
-const Login = require("../app/models/Login");
 const User = require("../app/models/user");
 const {
   mongooseToObject,

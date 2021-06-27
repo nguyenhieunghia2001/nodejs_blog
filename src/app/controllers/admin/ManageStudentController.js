@@ -1,6 +1,5 @@
 // const Login = require("../models/Login");
 const User = require("../../models/user");
-const Login = require("../../models/Login");
 const {
     mongooseToObject,
     mutipleMongooseToObject,
@@ -28,7 +27,6 @@ class ManageStudentController {
 
         const user = await User.findOne({ _id: id });
 
-        await Login.deleteOne({ email: user.email })
         await User.deleteOne({ _id: id})
 
         res.redirect('../../adminstudent')

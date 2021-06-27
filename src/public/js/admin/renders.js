@@ -28,8 +28,32 @@ export default function Render() {
     formUpdate.elements[0].value = lesson[0].name_video;
     formUpdate.elements[1].value = lesson[0].id_video;
   }
+  const renderChart = async (months) => {
+    const labels = Object.keys(months);
+    const data = {
+      labels: labels,
+      datasets: [
+        {
+          label: "số người đăng kí",
+          backgroundColor: "rgb(255, 99, 132)",
+          borderColor: "rgb(255, 99, 132)",
+          data: Object.values(months),
+        },
+      ],
+    };
+    const config = {
+      type: "line",
+      data,
+      options: {},
+    };
+    var myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+  }
   return {
     renderAddLesson,
     renderModalUpdate,
+    renderChart
   }
 }

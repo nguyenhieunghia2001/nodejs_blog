@@ -45,7 +45,7 @@ class CourseController {
     const course = await Cource.findOneAndUpdate(
       { slug: idcourse },
       {
-        $push: { _emailUser: emailUser },
+        $push: { _emailUser: {email: emailUser} },
       })
 
     //update user

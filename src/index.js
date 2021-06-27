@@ -9,16 +9,12 @@ const cookieSession = require('express-session')
 const route = require('./routes');
 const db = require('./config/database')
 const cookieParser = require('cookie-parser')
-const passport = require('passport');
-const FacebookStrategy = require('passport-facebook').Strategy;
-const config = require('./config');
-const Login = require("./app/models/Login");
-const User = require("./app/models/user");
 const {
   mongooseToObject,
   mutipleMongooseToObject,
 } = require("./util/mongoos");
-
+const { InitPassport } = require('./config/service/passport');
+InitPassport(app);
 
 const handlebars_hp = require('handlebars');
 const helpers = require('handlebars-helpers')({

@@ -16,7 +16,7 @@ class Api {
             return false;
         }
     }
-    getLessonWithId = async (lessonId) =>{
+    getLessonWithId = async (lessonId) => {
         try {
             let response = await axios.get('/lesson/getlesson', {
                 params: {
@@ -40,6 +40,15 @@ class Api {
             });
 
             Render().renderAddLesson(response.data.lessons);
+        } catch (error) {
+            return false;
+        }
+    }
+    getUserRegisterCourseWithMonth = async () => {
+        try {
+            let response = await axios.get('/adminhome/chart', {});
+
+            Render().renderChart(response.data.months);
         } catch (error) {
             return false;
         }

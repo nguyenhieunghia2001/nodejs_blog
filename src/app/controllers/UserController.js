@@ -1,5 +1,4 @@
 const User = require("../models/user");
-const Login = require("../models/Login");
 const Cource = require("../models/Cource");
 // const express = require('express')
 // const app = express()
@@ -41,7 +40,7 @@ class UserController {
   updatePassword(req, res, next) {
     const formData = req.body;
 
-    Login.findOne({ email: res.locals.currentUser.email })
+    User.findOne({ email: res.locals.currentUser.email })
       .then(user => {
         bcrypt.compare(formData.oldPass, user.password, function (err, result) {
           if (!result) {
@@ -50,7 +49,7 @@ class UserController {
           //update
           bcrypt.hash(formData.newPass, saltRounds, function (err, passHashed) {
 
-            Login.updateOne({ email: user.email }, { password: passHashed })
+            User.updateOne({ email: user.email }, { password: passHashed })
               .then(() => {
                 return res.status(200).json(formData);
               })
