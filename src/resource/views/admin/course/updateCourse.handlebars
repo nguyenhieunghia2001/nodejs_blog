@@ -67,14 +67,13 @@
             {{#each studieds}}
             <div class="d-flex align-items-center justify-content-between" studied-id="{{this._id}}">
               <input type="text" class="form-control txt_student" name="studied" placeholder="Sẽ học được gì"
-                value="{{this.studied}}" />
+                value="{{this.studied}}" required/>
               <i class="fas fa-minus-circle del_studied style-iconDel"></i>
             </div>
             {{/each}}
             {{else}}
             <div class="d-flex align-items-center justify-content-between">
-              <input type="text" class="form-control txt_student" name="studied" placeholder="Sẽ học được gì"
-                value="11" />
+              <input type="text" class="form-control txt_student" name="studied" placeholder="Sẽ học được gì" required/>
               <i class="fas fa-minus-circle del_studied style-iconDel"></i>
             </div>
             {{/if}}
@@ -96,13 +95,13 @@
             {{#each requests}}
             <div class="d-flex align-items-center justify-content-between">
               <input type="text" class="form-control txt_request" name="request" placeholder="Yêu cầu"
-                value="{{request}}" />
+                value="{{request}}" required/>
               <i class="fas fa-minus-circle del_request style-iconDel"></i>
             </div>
             {{/each}}
             {{else}}
             <div class="d-flex align-items-center justify-content-between">
-              <input type="text" class="  form-control txt_request" name="request" placeholder="Yêu cầu" />
+              <input type="text" class="  form-control txt_request" name="request" placeholder="Yêu cầu" required/>
               <i class="fas fa-minus-circle del_request style-iconDel"></i>
             </div>
             {{/if}}

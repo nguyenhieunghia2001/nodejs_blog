@@ -9,8 +9,8 @@ const manageStudentController = require('../../app/controllers/admin/ManageStude
 
 router.get('/', manageStudentController.index);
 
-router.get('/updatestudent/:id', manageStudentController.addcourseIndex);
-router.post('/updatestudent/:id', upload.single('image'), manageStudentController.addcourse);
+router.get('/updatestudent/:id', manageStudentController.updateGet);
+router.post('/updatestudent/:id', upload.single('image'), manageStudentController.updatePost);
 
 router.get('/delstudent/:id', manageStudentController.delstudent);
 

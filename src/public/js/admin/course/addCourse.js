@@ -44,7 +44,7 @@ const optionsCourse = {
     renderInput: function (name, placehoder) {
         const InputNode = this.createElement(
             'input',
-            {'type':'text', 'class':'form-control txt_request', 'name':name, 'placeholder':placehoder}
+            {'type':'text', 'class':'form-control txt_request', 'name':name, 'placeholder':placehoder, 'required':'required'}
         )
         const iNode = this.createElement(
             'i',

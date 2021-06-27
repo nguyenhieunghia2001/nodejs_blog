@@ -52,15 +52,22 @@ var hbs = handlebars.create({
     sum: (value) => value + 1,
     contain: (elem, list, options) => {
       if(list){
+        let count = 0;
         const arr = Object.values(list);
-        if (arr?.indexOf(elem) > -1) {
+        arr.forEach(e => {
+          if(e.email == elem){
+            count ++ ;
+          }
+        })
+
+        if (count > 0) {
           return options.fn(this);
         }
         else{
           return options.inverse(this);
         }
       }
-      return options.inverse(this);
+      else return options.inverse(this);
     },
     countObject: (list) => Object.keys(list).length
   }

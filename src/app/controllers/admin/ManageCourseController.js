@@ -8,6 +8,20 @@ const {
     mutipleMongooseToObject,
 } = require("../../../util/mongoos");
 
+//chuyển mảng thành mảng object
+const reductRequestsToArrObejct = (arr, id_course) => {
+    if(!Array.isArray(arr)) return [{id_course, request: arr}];
+    return arr.reduce((arrObject, values) => {
+        return [...arrObject, { id_course, request: values }]
+    }, [])
+}
+const reductStudiedsToArrObejct = (arr, id_course) => {
+    if(!Array.isArray(arr)) return [{id_course, studied: arr}];
+    return arr.reduce((arrObject, values) => {
+        return [...arrObject, { id_course, studied: values }]
+    }, [])
+}
+
 class ManageCourseController {
     async index(req, res, next) {
         const courses = await Course.find({});
@@ -17,7 +31,7 @@ class ManageCourseController {
 
     async addcourseIndex(req, res, next) {
 
-        res.render('admin/course/addCourse', {layout: 'admin', title: 'Courses Admin'});
+        res.render('admin/course/addCourse', { layout: 'admin', title: 'Courses Admin' });
     }
 
     async addcourse(req, res, next) {
@@ -29,7 +43,7 @@ class ManageCourseController {
             name: name,
             description: description,
             name_request: name,
-            img:{
+            img: {
                 data: req.file.buffer,
                 contentType: 'image/png'
             }
@@ -37,33 +51,13 @@ class ManageCourseController {
         await course.save();
 
         //lấy danh sách yêu cầu để add
-        let ReqList = [];
-        request.forEach((r) => {
-            ReqList.push({
-                id_course: course._id,
-                request: r,
-            });
-        });
+        let ReqList = reductRequestsToArrObejct(request, course._id);
 
         //lấy danh sách sẽ học được gì để add
-        let StuList = [];
-        studied.forEach((r) => {
-            StuList.push({
-                id_course: course._id,
-                studied: r,
-            });
-        });
+        let StuList = reductStudiedsToArrObejct(studied, course._id);
 
         const requestInsert = await Request.insertMany(ReqList);
         const studiedInsert = await Studied.insertMany(StuList);
-
-        // //cập nhật lại id studied và request cho Collection Course
-        // Course.findOneAndUpdate(
-        //     {_id: course._id},
-        //     {
-        //         $push: { _idCourse: course._id },
-        //     }
-        // )
 
         res.redirect('../../admincourse');
         // res.json(req.file.buffer);
@@ -95,39 +89,54 @@ class ManageCourseController {
         const { name, description, studied, request } = req.body;
         const { id } = req.params;
 
-        await Course.updateOne({ _id: id }, { img: { data: req.file.buffer, contentType: 'image/png' },
-                                              name: name,  
-                                              description: description,
-                                            })
-              .then(() => {
-                res.redirect('admincourse');
-              })
-              .catch(() => {
-                res.redirect('admincourse');
-              })
-              
-        res.redirect('admincourse');
+        const course = await Course.findOne({ _id: id });
+
+        //xóa request - studied
+        await Request.deleteMany({ id_course: id });
+        await Studied.deleteMany({ id_course: id });
+
+        //tạo lại
+        //lấy danh sách yêu cầu để add
+        let ReqList = reductRequestsToArrObejct(request, course._id);
+
+        //lấy danh sách sẽ học được gì để add
+        let StuList = reductStudiedsToArrObejct(studied, course._id);
+
+        const requestInsert = await Request.insertMany(ReqList);
+        const studiedInsert = await Studied.insertMany(StuList);
+
+        course.name = name;
+        course.description = description;
+        if (req.file)
+            course.img = {
+                data: req.file.buffer,
+                contentType: 'image/png'
+            }
+        await course.save();
+
+        res.redirect('../../admincourse');
     }
 
-    async delcourse(req, res, next){
+    async delcourse(req, res, next) {
         const { id } = req.params;
         // res.redirect('../../admincourse')
-        await Course.deleteOne({ _id: id})
-                .then(() => res.redirect('../../admincourse'))
-                .catch (next)
+        await Course.deleteOne({ _id: id })
+            .then(() => res.redirect('../../admincourse'))
+            .catch(next)
     }
-    
-    async lesson(req, res, next){
+
+    async lesson(req, res, next) {
         const { courseid } = req.query;
 
         await DetailCourse.find({ id_course: courseid })
-                .then((dt) => {
-                    res.render('admin/course/lesson/home', { 
-                        lessons: mutipleMongooseToObject(dt), 
-                        layout: 'admin', 
-                        title: 'Courses Admin' });
-                })
-                .catch (next)
+            .then((dt) => {
+                res.render('admin/course/lesson/home', {
+                    lessons: mutipleMongooseToObject(dt),
+                    layout: 'admin',
+                    title: 'Courses Admin'
+                });
+            })
+            .catch(next)
     }
 }
 

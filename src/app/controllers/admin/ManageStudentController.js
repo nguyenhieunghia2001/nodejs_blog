@@ -11,15 +11,23 @@ class ManageStudentController {
 
         res.render('admin/student/homeStudent', {users: mutipleMongooseToObject(users), layout: 'admin', title: 'Student Admin'});
     }
-    async addcourseIndex(req, res, next) {
-        const users = await User.find({});
+    async updateGet(req, res, next) {
+        const { id } = req.params;
+        const user = await User.findOne({ _id: id});
 
-        res.render('admin/student/updateStudent', {users: mutipleMongooseToObject(users), layout: 'admin', title: 'Student Admin'});
+        res.render('admin/student/updateStudent', {user: mongooseToObject(user), layout: 'admin', title: 'Student Admin'});
     }
-    async addcourse(req, res, next) {
-        const users = await User.find({});
+    async updatePost(req, res, next) {
+        const { id } = req.params;
+        const { username, gender } = req.body;
 
-        res.render('admin/student/', {users: mutipleMongooseToObject(users), layout: 'admin', title: 'Student Admin'});
+        const user = await User.findOne({ _id: id});
+        if(user){
+            user.username = username;
+            user.gender = gender;
+            user.save();
+        }
+        res.redirect('../../adminstudent');
     }
 
     async delstudent(req, res, next ){
