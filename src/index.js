@@ -8,11 +8,7 @@ const authMiddleware = require('./middlewares/auth')
 const cookieSession = require('express-session')
 const route = require('./routes');
 const db = require('./config/database')
-const cookieParser = require('cookie-parser')
-const {
-  mongooseToObject,
-  mutipleMongooseToObject,
-} = require("./util/mongoos");
+// const cookieParser = require('cookie-parser')
 const { InitPassport } = require('./config/service/passport');
 InitPassport(app);
 
@@ -33,9 +29,6 @@ app.use(cookieSession({
 }))
 
 app.use(authMiddleware);
-
-//cookie parser
-app.use(cookieParser())
 
 app.use(express.static(path.join(__dirname, 'public')));
 console.log(__dirname);
