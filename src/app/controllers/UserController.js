@@ -1,10 +1,4 @@
 const User = require("../models/user");
-const Cource = require("../models/Cource");
-// const express = require('express')
-// const app = express()
-const middlewareAuht = require('../../middlewares/auth')
-
-// app.use(middlewareAuht);
 const {
   mongooseToObject,
   mutipleMongooseToObject,
@@ -12,7 +6,6 @@ const {
 
 //hash
 const bcrypt = require("bcrypt");
-const { renderSync } = require("node-sass");
 const { json, response } = require("express");
 const saltRounds = 10;
 

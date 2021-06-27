@@ -1,10 +1,8 @@
 const Cource = require("../models/Cource");
 const User = require("../models/user");
-const DetailCource = require("../models/DetailCourse");
 const Request = require("../models/Request");
 const Studied = require("../models/Studied");
 const RegisterCourse = require("../models/RegisterCourse");
-const mongoose = require("mongoose");
 const {
   mongooseToObject,
   mutipleMongooseToObject,
