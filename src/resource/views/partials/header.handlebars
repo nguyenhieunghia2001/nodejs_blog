@@ -34,7 +34,7 @@
         <div class="user d-flex align-items-center">
             
             {{#if currentUser}}
-                {{#if_equal currentUser.action "admin"}}
+                {{#if_equal currentUser.type "admin"}}
                     <a href="/adminhome" class="user__name">Admin</a>
                 {{/if_equal}}
                     <div class="user__img" style="background-image: url(../../../img/icon1.png); margin: 0 10px 0 10px"></div>

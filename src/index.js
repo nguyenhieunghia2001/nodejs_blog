@@ -2,7 +2,7 @@ require('dotenv').config()
 const express = require('express')
 const handlebars = require('express-handlebars');
 const app = express()
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8888;
 const path = require('path');
 const authMiddleware = require('./middlewares/auth')
 const cookieSession = require('express-session')

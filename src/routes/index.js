@@ -11,19 +11,14 @@ const { isAuth } = require("../middlewares/authenlicate");
 const siteRouter = require("./site");
 
 function route(app) {
-    app.get('/logout', (req, res) => {
-        //it will clear the userData cookie
-        res.clearCookie('userData');
-        res.send('user logout successfully');
-    });
     app.use("/course", courseRouter);
     app.use("/lesson", lessonRouter);
     app.use("/auth", authRouter);
     app.use("/user", userRouter);
 
-    app.use('/admincourse', adminCourseRouter);
-    app.use('/adminhome', adminHomeRouter);
-    app.use('/adminstudent', adminStudentRouter);
+    app.use('/admincourse', isAuth,adminCourseRouter);
+    app.use('/adminhome', isAuth, adminHomeRouter);
+    app.use('/adminstudent', isAuth, adminStudentRouter);
 
     app.use("/", homeRouter);
 }
